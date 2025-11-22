@@ -38,9 +38,9 @@ class Tito
 
   def daily_message
     <<~TEXT
-      Daily Report for your event #{@event}
-      Total number of tickets sold: #{ticket_sales.count}\n
-      Today you sold #{daily_ticket_sales.count} tickets, here's a list of who bought them: \n
+      📅 Daily Report for your event #{@event}
+      💸 Total number of tickets sold: #{ticket_sales.count}\n
+      🚀 Today you sold #{daily_ticket_sales.count} tickets, here's a list of who bought them: \n
       #{daily_ticket_sales.map { |t| "- #{t["registration_name"]}" }.join("\n")}
     TEXT
   end
