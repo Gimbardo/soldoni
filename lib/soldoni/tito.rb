@@ -2,7 +2,7 @@ require "faraday"
 require "time"
 
 class Tito
-  TIME_LIMIT = 886_400
+  TIME_LIMIT = 86_400
 
   def initialize
     @api_token = ENV["TITO_API_TOKEN"]
