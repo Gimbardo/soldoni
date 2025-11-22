@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "bundler/setup"
+require "dotenv"
+Dotenv.load("../.env")
+require "soldoni"
+require "rufus-scheduler"
+require "tzinfo"
+
+TZInfo::DataSource.set(:ruby)
+
+scheduler = Rufus::Scheduler.new
+
+scheduler.cron "0 21 * * *" do
+  puts "[#{Time.now}] Calcolando i 💰💰💰 SOLDONI 💰💰💰 ..."
+
+  Soldoni.fetch_and_notify
+end
+
+scheduler.join

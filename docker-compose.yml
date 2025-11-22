@@ -1,0 +1,6 @@
+services:
+  soldoni:
+    build: .
+    restart: unless-stopped
+    volumes:
+      - .:/app
