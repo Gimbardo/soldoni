@@ -15,7 +15,7 @@ logger = Logger.new($stdout)
 logger.info "Starting Scheduler"
 
 scheduler.cron "00 18 * * *" do
-  puts "[#{Time.now}] Calcolando i 💰💰💰 SOLDONI 💰💰💰 ..."
+  logger.info "[#{Time.now}] Calcolando i 💰💰💰 SOLDONI 💰💰💰 ..."
 
   Soldoni.fetch_and_notify
 end
