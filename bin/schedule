@@ -7,10 +7,14 @@ Dotenv.load("../.env")
 require "soldoni"
 require "rufus-scheduler"
 require "tzinfo"
+require "logger"
 
 scheduler = Rufus::Scheduler.new
+logger = Logger.new($stdout)
 
-scheduler.cron "40 23 * * *" do
+logger.info "Starting Scheduler"
+
+scheduler.cron "00 18 * * *" do
   puts "[#{Time.now}] Calcolando i 💰💰💰 SOLDONI 💰💰💰 ..."
 
   Soldoni.fetch_and_notify
