@@ -8,11 +8,9 @@ require "soldoni"
 require "rufus-scheduler"
 require "tzinfo"
 
-TZInfo::DataSource.set(:ruby)
-
 scheduler = Rufus::Scheduler.new
 
-scheduler.cron "0 21 * * *" do
+scheduler.cron "40 23 * * *" do
   puts "[#{Time.now}] Calcolando i 💰💰💰 SOLDONI 💰💰💰 ..."
 
   Soldoni.fetch_and_notify
